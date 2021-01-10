@@ -1,5 +1,5 @@
 # fix for github linguist reporting the incorrect programming language
-*.txt   -linguist-detectable
+*.txt   linguist-language=cpp
 
 # set correct github linguist code detection
 *.cpp   linguist-language=cpp
