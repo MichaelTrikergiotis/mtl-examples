@@ -192,15 +192,6 @@ jobs:
           cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Debug
           cmake --build .
       
-      - name: Build Debug Linux clang and libcxx
-        if: runner.os == 'Linux' &&  matrix.compiler == 'clang'
-        run: |
-          rm -rf build
-          mkdir build
-          cd build
-          cmake .. -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DENABLE_LIBCXX=ON -DCMAKE_BUILD_TYPE=Debug
-          cmake --build .
-
       - name: Build Release Linux
         if: runner.os == 'Linux'
         run: |
@@ -210,15 +201,7 @@ jobs:
           cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build .
       
-      - name: Build Release Linux clang and libcxx
-        if: runner.os == 'Linux' &&  matrix.compiler == 'clang'
-        run: |
-          rm -rf build
-          mkdir build
-          cd build
-          cmake .. -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DENABLE_LIBCXX=ON -DCMAKE_BUILD_TYPE=Release
-          cmake --build .
-     
+    
 
       # macOS
 
