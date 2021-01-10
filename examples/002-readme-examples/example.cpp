@@ -14,7 +14,6 @@
 #include <cmath>   // std::sqrt, std::pow
 #include <cstdlib> // std::exit
 
-
 // mtl headers we have to include
 #include "../mtl/string.hpp"     // mtl::string::split, mtl::string::join_all, mtl::string::join
 #include "../mtl/console.hpp"    // mtl::console::println, mtl::console::print
@@ -22,6 +21,8 @@
 #include "../mtl/stopwatch.hpp"  // mtl::chrono::stopwatch
 #include "../mtl/filesystem.hpp" // mtl::filesystem::write_all_lines, 
                                  // mtl::filesystem::read_all_lines
+
+
 
 
 // How to split an std::string using the mtl.

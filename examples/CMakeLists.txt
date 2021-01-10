@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # the project function sets the name of the project
 project(mtl-examples)
 
+
 # macro to get all subdirectories in the current folder
 macro(GETSUBDIR output_variable current_dir)
   file(GLOB children RELATIVE ${current_dir} ${current_dir}/*)
@@ -33,8 +34,8 @@ GETSUBDIR(subdirectories ${CMAKE_CURRENT_SOURCE_DIR})
 
 # use foreach to loop over all subdirectories and add them
 foreach(subdirectory ${subdirectories})
-  # print a message that a subdirectory was added
-  message("-- Added subdirectory ${subdirectory} as a subproject.")
   # add each subdirectory we want to compile with add_subdirectory
   add_subdirectory(${subdirectory}) 
+  # print a message that a subdirectory was added
+  message("-- Added ${subdirectory} as a subdirectory.")
 endforeach()
