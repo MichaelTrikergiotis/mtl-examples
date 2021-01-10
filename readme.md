@@ -58,6 +58,6 @@ The **mtl-examples** is licensed under the [MIT license](./LICENSE).
 
 For third party licenses check [ThirdPartyNotices](./ThirdPartyNotices.txt).
 
-**mtl** by Michael Trikergiotis 2016-2020
+**mtl** by Michael Trikergiotis 2016-2021
 
-**mtl-examples** by Michael Trikergiotis 2020
+**mtl-examples** by Michael Trikergiotis 2021
