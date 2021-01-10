@@ -4,7 +4,7 @@
 
 The [**mtl**](https://github.com/MichaelTrikergiotis/mtl) or by its full name the [**Modern Template Library**](https://github.com/MichaelTrikergiotis/mtl) is a C++ 17 header-only library that provides everything you ever wanted but the C++ standard library is missing. It provides a lot of functionality that other programming languages include by default in their standard libraries.
 
-For a quick overview of what **mtl** provides you can check the [list of classes and functions](https://github.com/MichaelTrikergiotis/mtl/blob/main/docs/documentation.md#listings).
+For a quick overview of what **mtl** provides you can check the [list of classes and functions](https://github.com/MichaelTrikergiotis/mtl/blob/main/docs/listing.md).
 
 ## What is mtl-examples
 
