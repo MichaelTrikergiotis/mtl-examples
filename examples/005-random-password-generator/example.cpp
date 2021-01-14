@@ -21,7 +21,7 @@
                                    // mtl::console::print_all
 #include "../mtl/string.hpp"       
 // mtl::string::strip, mtl::string::join, mtl::string::to_lower, mtl::string::to_upper, 
-// mtl::string::to_string, mtl::string::pad_front
+// mtl::string::to_string, mtl::string::pad_front, mtl::string::is_numeric
 
 
 
@@ -135,9 +135,8 @@ int main()
     std::string title = "=== [Welcome to the random password generator.] ===";
     // convert an std::string to uppercase
     mtl::string::to_upper(title);
-
     mtl::console::println(title);
-    mtl::console::println("Please select password length : ");
+    
 
     // get the length of the password from the user    
     std::string user_input;
@@ -145,36 +144,47 @@ int main()
     bool correct_pass_length = false;
     while(correct_pass_length == false)
     {
+        mtl::console::println("Please select the length of the password : ");
         try
         {
             // read user input
             std::getline(std::cin, user_input);
             // remove spaces from the front and back
             mtl::string::strip(user_input);
-            // try to convert the std::string to an integer, if we can't an exception will be
-            // thrown, please note that there is an alternative version of mtl::to_num called 
-            // mtl::to_num_noex that does not throw exceptions and has two different overloads, but
-            // we have chosen to showcase this version, please note that throwing exceptions
-            // in C++ is slow due to how exceptions are designed, to be cheap when not thrown and
-            // very expensive when thrown
-            password_length = mtl::to_num(user_input);
+            // we check that the all characters are numbers
+            if(mtl::string::is_numeric(user_input))
+            {
+                // with mtl::to_num we can convert an std::string to any type of number, the number
+                // type is automatically deduced from the variable used but that means it can't be
+                // used with auto, if the conversion can't be performed successfully an exception
+                // will be thrown, please note that there is an alternative version of mtl::to_num
+                // called mtl::to_num_noex that does not throw exceptions and has two different
+                // overloads, but we have chosen to showcase this version, also note that
+                // throwing exceptions in C++ is slow due to how exceptions are designed to be
+                // cheap when not thrown and very expensive when thrown
+                password_length = mtl::to_num(user_input);
 
-            // if password is below 6 characters
-            if(password_length < 6)
-            {
-                // if we are here then it means we successfully converted the std::string to an
-                // integer
-                mtl::console::println("Password length is too small. Select a number above 5.");
-            }
-            // if password is more than 20 characters
-            else if(password_length > 20)
-            {
-                mtl::console::println("Password length is too big. Select a number below 21.");
-            }
+                // if password length is less than 6 characters
+                if(password_length < 6)
+                {
+                    mtl::console::print("Password length is too small.");
+                    mtl::console::println("Select a number above 5.");
+                }
+                // if password length is more than 20 characters
+                else if(password_length > 20)
+                {
+                    mtl::console::println("Password length is too big. Select a number below 21.");
+                }
+                else
+                {
+                    correct_pass_length = true;
+                }
+            }    
             else
             {
-                correct_pass_length = true;
-            }
+                mtl::console::println("Some of the characters entered are not numbers.");
+            } 
+       
         }
         // do not use a name for the captured exception because we don't want to use the exception
         // message instead we want to print our own message
@@ -188,12 +198,12 @@ int main()
     size_t length = 0;
     try
     {
-        // convert the signed integer to an unsigned integer safely with mtl::numeric_cast, if the
-        // number can't be converted an exception will be thrown, please note that there is another
-        // version of mtl::numeric_cast called mtl::numeric_cast_noex that doesn't throw
-        // exceptions and has two different overloads, but we have chosen to showcase this version,
-        // please note that throwing exceptions in C++ is slow due to how exceptions are designed,
-        // to be cheap when not thrown and very expensive when thrown
+        // with mtl::numeric_cast we can safely convert a number of any type to any other type of
+        // number, if the number can't be converted an exception will be thrown, please note that
+        // there is another version of mtl::numeric_cast called mtl::numeric_cast_noex that
+        // doesn't throw exceptions and has two different overloads, but we have chosen to
+        // showcase this version, also note that throwing exceptions in C++ is slow due to how
+        // exceptions are designed to be cheap when not thrown and very expensive when thrown
         length = mtl::numeric_cast<size_t>(password_length);
     }
     catch(const std::overflow_error& exception)
