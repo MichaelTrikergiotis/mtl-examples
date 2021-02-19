@@ -59,7 +59,7 @@ void example_3()
     mtl::console::print_all(names.begin(), names.end(), ", ");
 
     // print multiple newlines
-    mtl::console::println("\n----\n");
+    mtl::console::println("\n------------------------------------\n");
 
     // mtl::console::print_all supports various kinds of containers
     const std::list<double> numbers { 0.1, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9 };
@@ -67,7 +67,7 @@ void example_3()
     // each line can start with the requested string, each line can end with the requested string
     mtl::console::print_all(numbers.begin(), numbers.end(), " | ", 2, "- ", " -");
 
-    mtl::console::println("----\n");
+    mtl::console::println("-------------\n");
 
     const std::vector<int> big_numbers {1, 22, 333, 4444, 55555, 666666, 7777777, 88888888, 
                                         1, 22, 333, 4444, 55555, 666666, 7777777, 88888888,
@@ -76,7 +76,7 @@ void example_3()
     // mtl::console::print_all can align elements it prints, the ways you can pad the elements are
     // to the front, to the back, both ways but mostly to the front and both ways but mostly to the
     // back
-    mtl::console::print_all(big_numbers.begin(), big_numbers.end(), " ][ ", 4, "-[ ", " ]-", 
+    mtl::console::print_all(big_numbers.begin(), big_numbers.end(), "][", 4, "[", "]", 
                             mtl::console::print_pad::both_back);
 
 }
@@ -96,7 +96,7 @@ void example_4()
     mtl::console::print_color("[GREEN] ", mtl::console::color::green);
     mtl::console::print_color("[BLUE]" , mtl::console::color::blue);
     
-    mtl::console::print("\n----\n");
+    mtl::console::print("\n---------------------------------\n");
 
     mtl::console::println_color("[CYAN BACKGROUND]",    mtl::console::color::default_color,
                                                         mtl::console::color::cyan );
@@ -141,19 +141,19 @@ int main()
     // print the examples with nice dividers between them.
     mtl::console::println("[EXAMPLE 1]");
     example_1();
-    mtl::console::println("---------------------------------------------------\n");
+    mtl::console::println("====================================\n\n");
 
     mtl::console::println("[EXAMPLE 2]");
     example_2();
-    mtl::console::println("---------------------------------------------------\n");
+    mtl::console::println("====================================\n\n");
 
     mtl::console::println("[EXAMPLE 3]");
     example_3();
-    mtl::console::println("---------------------------------------------------\n");
+    mtl::console::println("========================================\n\n");
 
     mtl::console::println("[EXAMPLE 4]");
     example_4();
-    mtl::console::println("---------------------------------------------------\n");
+    mtl::console::println("===============================================================\n\n");
 
     mtl::console::println("[EXAMPLE 5]");
     example_5();
