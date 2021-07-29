@@ -67,8 +67,8 @@ void example_2()
 // How to join variables of different types and then print them to console.
 void example_3()
 {
-    // mtl::console::print prints one ore more arguments of different types to the console
-    // mtl::console::println prints one ore more arguments of different types to the console but
+    // mtl::console::print prints one or more arguments of different types to the console
+    // mtl::console::println prints one or more arguments of different types to the console but
     // also print a newline character after each argument
 
     const std::string planet = " planet ";
@@ -79,8 +79,8 @@ void example_3()
     mtl::console::println(message);
 
     // second part of the example
-    // print multiple different types of arguments to the console, this will produce the same
-    // output as the lines above, please note that the last argument is a newline character
+    // print different types of arguments to the console, this will produce the same output as the
+    // lines above, please note that the last argument is a newline character
     mtl::console::print("Hello from ", 'a', planet, 12.24f, " light-years away.", '\n');
 
     // check the result is what we want
