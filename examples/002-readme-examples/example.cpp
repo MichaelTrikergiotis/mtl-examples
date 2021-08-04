@@ -69,7 +69,7 @@ void example_3()
 {
     // mtl::console::print prints one or more arguments of different types to the console
     // mtl::console::println prints one or more arguments of different types to the console but
-    // also print a newline character after each argument
+    // also prints the newline character after each argument
 
     const std::string planet = " planet ";
     // join multiple different types of arguments to an std::string
