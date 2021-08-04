@@ -8,7 +8,7 @@ For a quick overview of what **mtl** provides you can check the [list of classes
 
 ## What is mtl-examples
 
-The **mtl-examples** repository contains detailed examples that teach you how to use the [mtl](https://github.com/MichaelTrikergiotis/mtl) in the most effective way. Read the detailed comments of each example to learn the best usage patterns and things to avoid.
+The **mtl-examples** repository contains detailed examples that teach you how to use the [mtl](https://github.com/MichaelTrikergiotis/mtl) in the most effective way. Read the detailed comments of each example to learn the best usage patterns and common mistakes to avoid.
 
 Instead of the detailed examples from this repository you may wish to check some quick examples that are only few lines long from [here](https://github.com/MichaelTrikergiotis/mtl#examples). All quick examples are also included in this repository with added comments for each line.
 
