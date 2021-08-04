@@ -36,7 +36,8 @@ void example_1()
     std::vector<std::string> desired_result { "Joe", "Jill", "Bill", "Nick", "Maria", "Helen" };
     if(tokens == desired_result)
     {
-        // to print something to the console followed by a newline
+        // mtl::console::println can print one or more arguments of various types to the console
+        // with each argument on a new line
         mtl::console::println("Example 1 produced correct results.");
     }
     else
@@ -67,20 +68,19 @@ void example_2()
 // How to join variables of different types and then print them to console.
 void example_3()
 {
-    // mtl::console::print prints one or more arguments of different types to the console
-    // mtl::console::println prints one or more arguments of different types to the console but
-    // also prints the newline character after each argument
-
     const std::string planet = " planet ";
     // join multiple different types of arguments to an std::string
     std::string message = mtl::string::join("Hello from ", 'a', planet, 12.24f, 
                                             " light-years away.");
-    // print the joined string to the console followed by a newline
+    // mtl::console::println can print one or more arguments of various types to the console with
+    // each argument on a new line
     mtl::console::println(message);
 
-    // second part of the example
-    // print different types of arguments to the console, this will produce the same output as the
-    // lines above, please note that the last argument is a newline character
+
+
+    // mtl::console::print can print one or more arguments of various types to the console,
+    // this will produce the same output as the lines above but please note for that to happen the
+    // last argument here is a newline character
     mtl::console::print("Hello from ", 'a', planet, 12.24f, " light-years away.", '\n');
 
     // check the result is what we want
