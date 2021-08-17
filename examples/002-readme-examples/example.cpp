@@ -100,9 +100,9 @@ void example_3()
 void example_4()
 {
     // create a random number generator that will generate integers from 1 to 10
-    mtl::rng<int> rng_1to10 (1, 10);
+    mtl::rng<int> random_num_gen (1, 10);
     // generate a new random integer from 1 to 10
-    int random_number = rng_1to10.next();
+    int random_number = random_num_gen.next();
 
     // check the result is what we want
     if((random_number >= 1) && ( random_number <= 10))
