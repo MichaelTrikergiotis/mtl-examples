@@ -31,9 +31,9 @@
 void example_1()
 {
     // print a message for the first example
-    mtl::console::println("------------------------------------------------------");
-    mtl::console::println("[FIRST EXAMPLE - COUNT EACH TYPE OF PET IN A PET SHOP]");
-    mtl::console::println("------------------------------------------------------");
+    mtl::console::println("--------------------------------------------------");
+    mtl::console::println("[EXAMPLE 1 - COUNT EACH TYPE OF PET IN A PET SHOP]");
+    mtl::console::println("--------------------------------------------------");
 
     // various pets
     const std::string cat = "cat";
@@ -65,9 +65,9 @@ void example_1()
 // An example on how to find the word frequency of a text.
 void example_2()
 {
-    mtl::console::println("-----------------------------------------------------");
-    mtl::console::println("[SECOND EXAMPLE - COUNT THE WORD FREQUENCY OF A TEXT]");
-    mtl::console::println("-----------------------------------------------------");
+    mtl::console::println("------------------------------------------------");
+    mtl::console::println("[EXAMPLE 2 - COUNT THE WORD FREQUENCY OF A TEXT]");
+    mtl::console::println("------------------------------------------------");
 
     // create some text
     const std::string text1 = "Some text to process.";
@@ -169,9 +169,9 @@ void display_sorted_frequency(const std::unordered_map<int, size_t>& container)
 // An example displaying the sorted frequency distribution of random numbers using mtl::frequency.
 void example_3()
 {
-    mtl::console::println("------------------------------------------------------------");
-    mtl::console::println("[THIRD EXAMPLE - DISPLAY THE DISTRIBUTION OF RANDOM NUMBERS]");
-    mtl::console::println("------------------------------------------------------------");
+    mtl::console::println("--------------------------------------------------------");
+    mtl::console::println("[EXAMPLE 3 - DISPLAY THE DISTRIBUTION OF RANDOM NUMBERS]");
+    mtl::console::println("--------------------------------------------------------");
 
     // create a container to store random numbers
     std::vector<int> numbers (100);
@@ -196,14 +196,14 @@ int main()
     // the first example
     example_1();
 
-    // print a nice divider between examples
-    mtl::console::println("\n\n=====================================================\n\n");
+    // print a divider between examples
+    mtl::console::println("\n\n================================================\n\n");
 
     // the second example
     example_2();   
 
-    // print a nice divider between examples
-    mtl::console::println("\n\n============================================================\n\n");
+    // print a divider between examples
+    mtl::console::println("\n\n========================================================\n\n");
 
     // the third example
     example_3();

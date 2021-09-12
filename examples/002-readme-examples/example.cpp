@@ -209,29 +209,39 @@ void example_6()
 
 int main()
 {
-    mtl::console::println("Various examples for how to use the mtl.");
-
-    // print the examples with nice dividers between them.
+    // print the examples with dividers between them.
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 1]");
+    mtl::console::println("-----------");
     example_1();
-    mtl::console::println("-----------------------------------------------");
+    mtl::console::println("\n===============================================\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 2]");
+    mtl::console::println("-----------");
     example_2();
-    mtl::console::println("-----------------------------------------------");
+    mtl::console::println("\n===============================================\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 3]");
+    mtl::console::println("-----------");
     example_3();
-    mtl::console::println("-----------------------------------------------");
+    mtl::console::println("\n===============================================\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 4]");
+    mtl::console::println("-----------");
     example_4();
-    mtl::console::println("-----------------------------------------------");
+    mtl::console::println("\n===============================================\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 5]");
+    mtl::console::println("-----------");
     example_5();
-    mtl::console::println("-----------------------------------------------");
+    mtl::console::println("\n===============================================\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 6]");
+    mtl::console::println("-----------");
     example_6();
 }

@@ -28,15 +28,13 @@
 // and then how to use and mtl::filesystem::read_file to read from a file. 
 void write_read_files()
 {
-    mtl::console::println("\n--------------------------------");
-    mtl::console::println("[FIRST EXAMPLE]");
+    mtl::console::println("-----------");
+    mtl::console::println("[EXAMPLE 1]");
+    mtl::console::println("-----------");
 
     const std::string question = "How are things going today? Are you doing well?";
     const std::string answer   = "Yes I am. Thank you for asking.";
 
-    // we use std::filesystem::path instead of std::string because we want to avoid extra
-    // allocations from the C++ standard library and the mtl functions that accept 
-    // std::filesystem::path that will have to convert std::string to std::filesystem::path
     const std::filesystem::path filename ("document.txt");
 
     // we use try/catch because the all the filesystem functions can throw an exception in 
@@ -57,7 +55,7 @@ void write_read_files()
         // you didn't have permission to write to the requested file
         if(written_ok)
         {
-            mtl::console::println("The file was written ok.");
+            mtl::console::println("The file was written correctly.");
         }
         // if you couldn't write to the file print an error message and exit
         else
@@ -96,12 +94,12 @@ void write_read_files()
         // if the file could be read correctly
         if(read_ok)
         {
-            mtl::console::println("The file was read ok.");
+            mtl::console::println("The file was read correctly.");
 
             // check what we read was correct
             if(question == read_data)
             {
-                mtl::console::println("The file contents were read correctly.");
+                mtl::console::println("The file contents were correct.");
             }
             else
             {
@@ -129,7 +127,7 @@ void write_read_files()
         // you didn't have permission to write to the requested file
         if(appended_ok)
         {
-            mtl::console::println("The file was written ok.");
+            mtl::console::println("The file was written correctly.");
         }
         // if you couldn't append to the file print an error message and exit
         else
@@ -161,7 +159,7 @@ void write_read_files()
 
         if(read_appended_ok)
         {
-            mtl::console::println("The file was read ok.");
+            mtl::console::println("The file was read correctly.");
 
             // the read data should now be a combination of the question and the answer
             const std::string desired_data = question + answer;
@@ -169,7 +167,7 @@ void write_read_files()
             // check what we read was correct
             if(desired_data == read_appended_data)
             {
-                mtl::console::println("The file contents were read correctly.");
+                mtl::console::println("The file contents were correct.");
             }
             else
             {
@@ -210,9 +208,6 @@ void write_read_files()
         mtl::console::println(ex.what());
         std::exit(1);
     }  
-
-    mtl::console::println("[THE FIRST EXAMPLE FINISHED]");
-    mtl::console::println("--------------------------------\n");
 }
 
 
@@ -223,15 +218,13 @@ void write_read_files()
 // read all lines from a file.
 void write_read_lines()
 {
-    mtl::console::println("\n--------------------------------");
-    mtl::console::println("[SECOND EXAMPLE]");
+    mtl::console::println("-----------");
+    mtl::console::println("[EXAMPLE 2]");
+    mtl::console::println("-----------");
 
     const std::vector<std::string> rgb_colors  = { "Red", "Green", "Blue" };
     const std::vector<std::string> cmyk_colors = { "Cyan", "Magenta", "Yellow", "Black"};
     
-    // we use std::filesystem::path instead of std::string because we want to avoid extra
-    // allocations from the C++ standard library and the mtl functions that accept 
-    // std::filesystem::path that will have to convert std::string to std::filesystem::path
     const std::filesystem::path filename ("colors.txt");
 
 
@@ -254,7 +247,7 @@ void write_read_lines()
         // you didn't have permission to write to the requested file
         if(written_ok)
         {
-            mtl::console::println("The file was written ok.");
+            mtl::console::println("The file was written correctly.");
         }
         // if you couldn't write to the file print an error message and exit
         else
@@ -293,12 +286,12 @@ void write_read_lines()
         // if the file could be read correctly
         if(read_ok)
         {
-            mtl::console::println("The file was read ok.");
+            mtl::console::println("The file was read correctly.");
 
             // check what we read was correct
             if(read_colors == rgb_colors)
             {
-                mtl::console::println("The file contents were read correctly.");
+                mtl::console::println("The file contents were correct.");
             }
             else
             {
@@ -328,7 +321,7 @@ void write_read_lines()
         // you didn't have permission to write to the requested file
         if(appended_ok)
         {
-            mtl::console::println("The file was written ok.");
+            mtl::console::println("The file was written correctly.");
         }
         // if you couldn't append to the file print an error message and exit
         else
@@ -360,7 +353,7 @@ void write_read_lines()
 
         if(read_appended_ok)
         {
-            mtl::console::println("The file was read ok.");
+            mtl::console::println("The file was read correctly.");
 
             // the read data should now be a combination of the RGB colors and CMYK colors
             const std::vector<std::string> colors = { "Red", "Green", "Blue", "Cyan", "Magenta", 
@@ -369,7 +362,7 @@ void write_read_lines()
             // check what we read was correct
             if(colors == read_appended_colors)
             {
-                mtl::console::println("The file contents were read correctly.");
+                mtl::console::println("The file contents were correct.");
             }
             else
             {
@@ -412,17 +405,15 @@ void write_read_lines()
         mtl::console::println("Error. The file doesn't exist.");
         std::exit(1);
     }
-
-    mtl::console::println("[THE SECOND EXAMPLE FINISHED]");
-    mtl::console::println("--------------------------------\n");
 }
 
 int main()
 {
-    mtl::console::println("How to properly read and write files using the mtl.");
-
     // example for how to write and read files
     write_read_files();
+
+    // print a divider between examples
+    mtl::console::println("\n\n=====================================================\n\n");
 
     // example for how to write a container in different lines of a file and how to read all lines
     // from a file

@@ -27,12 +27,12 @@ bool date_comparator(const std::string& rhs_date, const std::string& lhs_date)
     std::string lhs = lhs_date;
 
     // converts all hyphens to forward slashes, changes the format of the dates
-    // from 01-02-2020 to 01/02/2020, this doesn't require any heap allocations
+    // from 01-02-2020 to 01/02/2020
     mtl::string::replace(rhs, '-', '/');  
     mtl::string::replace(lhs, '-', '/');
 
     // converts all dots to forward slashes, changes the format of the dates
-    // from 01.02.2020 to 01/02/2020, this doesn't require any heap allocations
+    // from 01.02.2020 to 01/02/2020
     mtl::string::replace(rhs, '.', '/');
     mtl::string::replace(lhs, '.', '/');
     

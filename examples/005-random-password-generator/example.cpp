@@ -38,7 +38,7 @@ bool answer(const std::string& message)
     std::getline(std::cin, user_input);
     // remove spaces from the front and back
     mtl::string::strip(user_input);
-    // convert the std::string to lowercase
+    // convert the std::string to lowercase, this function doesn't perform any heap allocations
     mtl::string::to_lower(user_input);
     // checks user_input is contained in the container
     if(mtl::contains(yes, user_input))
@@ -132,8 +132,8 @@ void rate_password_strength(const size_t password_length, const bool lowercase,
 
 int main()
 {
-    std::string title = "=== [Welcome to the random password generator.] ===";
-    // convert an std::string to uppercase
+    std::string title = "=== [random password generator] ===";
+    // convert an std::string to uppercase, this function doesn't perform any heap allocations
     mtl::string::to_upper(title);
     mtl::console::println(title);
     
@@ -167,7 +167,7 @@ int main()
                 // if password length is less than 6 characters
                 if(password_length < 6)
                 {
-                    mtl::console::print("Password length is too small.");
+                    mtl::console::print("Password length is too short. ");
                     mtl::console::println("Select a number above 5.");
                 }
                 // if password length is more than 20 characters

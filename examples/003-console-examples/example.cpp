@@ -117,7 +117,6 @@ void example_4()
 
 
 // You can type over already printed characters in the same line with mtl::console::overtype.
-// You can clear the console with the use of mtl::console::clear.
 void example_5()
 {
     // printing normally to the console
@@ -128,33 +127,52 @@ void example_5()
     mtl::console::print("Overtyped : ", numbers);
     // you can type over already printed characters as long as they are on the same line
     mtl::console::overtype("**********");
-    mtl::console::println('\n');
+    
+    mtl::console::println();
+}
 
+// You can clear the console with the use of mtl::console::clear.
+void example_6()
+{
     mtl::console::println("Using mtl::console::clear() clears the console.");
     mtl::console::println("The mtl::console::clear() will not be showcased in this example.");
 }
 
 int main()
 {
-    mtl::console::println("Various examples for how to use the mtl::console.");
-
-    // print the examples with nice dividers between them.
+    // print the examples with dividers between them.
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 1]");
+    mtl::console::println("-----------");
     example_1();
     mtl::console::println("====================================\n\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 2]");
+    mtl::console::println("-----------");
     example_2();
     mtl::console::println("====================================\n\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 3]");
+    mtl::console::println("-----------");
     example_3();
     mtl::console::println("========================================\n\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 4]");
+    mtl::console::println("-----------");
     example_4();
     mtl::console::println("===============================================================\n\n");
 
+    mtl::console::println("-----------");
     mtl::console::println("[EXAMPLE 5]");
+    mtl::console::println("-----------");
     example_5();
+    mtl::console::println("===============================================================\n\n");
+
+    mtl::console::println("-----------");
+    mtl::console::println("[EXAMPLE 6]");
+    mtl::console::println("-----------");
+    example_6();
 }
