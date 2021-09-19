@@ -82,10 +82,11 @@ void example_2()
     mtl::console::println("The text :");
     mtl::console::print("[", combined_text, "]\n\n");
 
-    // convert all text to lowercase, this function doesn't perform any heap allocations
+    // convert all text to lowercase, this function doesn't perform any allocations
     mtl::string::to_lower(combined_text);
 
-    // remove all occurrences of the dot character
+    // remove all occurrences of the dot character, this mtl::string::replace overload doesn't
+    // perform any allocations
     mtl::string::replace(combined_text, '.', ' ');
     
     // split all words into separate strings to an std::vector<std::string>
